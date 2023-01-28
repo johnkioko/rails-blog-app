@@ -22,7 +22,8 @@ REQUIRED SECTIONS:
 After you're finished please remove all the comments and instructions!
 -->
 
-  <h3><b>Rails Blog App</b></h3>
+
+  <h3><b>Blog App</b></h3>
 
 </div>
 
@@ -56,15 +57,19 @@ After you're finished please remove all the comments and instructions!
 
 > Describe your project in 1 or 2 sentences.
 
-**[Blog-App]** This is a blog website that allows users to make comments, likes and posts.
+**[Blog-App]** In this project, I will be setting up our models. To start with, we have tables for Users, Posts, Comments, and Likes, which means I need a model for each one.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
+Ruby
+Rails
+Postgresql
 
 <details>
   <summary>Client</summary>
  </details>
+
 
 ### Key Features <a name="key-features"></a>
 
@@ -172,11 +177,12 @@ Example:
 
 > Mention all of the collaborators of this project.
 
+
 👤 **John Mutisya**
 
-- GitHub: [@John Mutisya](https://github.com/johnkioko)
-- Twitter: [@John Mutisya](https://twitter.com/John_Web_Dev)
-- LinkedIn: [John Mutisya](https://linkedin.com/in/johnmutisya)
+  - GitHub: [@John Mutisya](https://github.com/johnkioko)
+  - Twitter: [@John Mutisya](https://twitter.com/John_Web_Dev)
+  - LinkedIn: [John Mutisya](https://linkedin.com/in/johnmutisya)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
