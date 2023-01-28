@@ -4,7 +4,9 @@ class Post < ApplicationRecord
   has_many :likes
   belongs_to :author, class_name: 'User'
 
-  def update_posts_counter
-    User.find_by(name: author.name).increment!(:posts_counter)
-  end
+  private
+
+ def update_post_counter
+   author.increment!(:posts_counter)
+ end
 end
