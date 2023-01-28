@@ -57,7 +57,7 @@ After you're finished please remove all the comments and instructions!
 
 > Describe your project in 1 or 2 sentences.
 
-**[Blog-App]** In this project, I will be setting up our models. To start with, we have tables for Users, Posts, Comments, and Likes, which means I need a model for each one.
+**[Blog-App]** In this project, I added validations to the models and create specs for them.
 
 ## 🛠 Built With <a name="built-with"></a>
 
