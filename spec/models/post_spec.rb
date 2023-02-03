@@ -1,36 +1,38 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  it 'Testing for no Title' do
-    post = Post.create
-    expect(post).to_not be_valid
-  end
+  subject { Post.new(title: 'hello man') }
 
-  it 'Testing post CommentCounter number negative' do
-    post = Post.create(AuthorId: 1, Title: 'John', Text: 'anything')
-    post.CommentCounter = -10
-    expect(post).to_not be_valid
-  end
+  before { subject.save }
 
-  it 'Testing post LikeCounter number negative' do
-    post = Post.create(AuthorId: 1, Title: 'John', Text: 'anything')
-    post.LikeCounter = -10
-    expect(post).to_not be_valid
-  end
-
-  it 'Title should be present' do
-    post = Post.create(AuthorId: 1, Title: 'John', Text: 'anything')
-    post.Title = nil
-    expect(post).to_not be_valid
-  end
-
-  it 'Title should not exceed 250 characters' do
-    subject.Title = 'a' * 300
+  it 'Posts should be not be Valid' do
+    subject.title = nil
     expect(subject).to_not be_valid
   end
+  it 'User post counter to increment' do
+    subject.author = User.new(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                              bio: 'Teacher from Mexico.')
+    subject.send(:posts_counter)
+    expect(subject.author.posts_counter).to be(1)
+  end
+  it 'Likes Counter attribute should be greater or equal to zero' do
+    subject.likes_counter = -1
+    expect(subject).to_not be_valid
+  end
+  it 'Comments Counter attribute should be an integer number' do
+    subject.comments_counter = 'some random string'
+    expect(subject).to_not be_valid
+  end
+  it 'five_last_comments method should return the last five comments' do
+    post = described_class.create(title: 'Post One', text: 'This is the post one')
+    author = User.first
 
-  it 'Has a latest_comments method' do
-    post = Post.new(Title: 'this is a post', CommentCounter: 5, LikeCounter: 10)
-    expect(post).to respond_to(:latest_comments)
+    post.comments = [
+      Comment.new({ author:, text: 'This is the comment one' }),
+      Comment.new({ author:, text: 'This is the comment two' })
+    ]
+
+    expect(post.last_comments.size).to be(2)
+    expect(post.last_comments.pluck(:id)).to match_array(post.comments.last(5).pluck(:id))
   end
 end

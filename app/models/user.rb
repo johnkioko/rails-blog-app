@@ -1,12 +1,12 @@
 class User < ApplicationRecord
-  has_many :posts, foreign_key: 'AuthorId'
-  has_many :comments, foreign_key: 'AuthorId'
-  has_many :likes, foreign_key: 'AuthorId'
+  has_many :posts, dependent: :destroy, foreign_key: 'author_id'
+  has_many :comments, foreign_key: 'author_id'
+  has_many :likes, foreign_key: 'author_id'
 
-  def latest_posts
-    Post.where(author: self).limit(3)
+  validates :name, presence: true, length: { in: 1..250 }
+  validates :posts_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+
+  def last_three_posts
+    posts.last(3)
   end
-
-  validates :Name, presence: true
-  validates :PostCounter, numericality: { greater_than_or_equal_to: 0 }
 end

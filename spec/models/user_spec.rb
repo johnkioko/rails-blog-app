@@ -1,25 +1,39 @@
 require 'rails_helper'
+require 'faker'
 
 RSpec.describe User, type: :model do
-  it 'Testing user without name' do
-    user = User.create
-    expect(user).to_not be_valid
-  end
+  subject { User.new(name: 'Monkey D Luffy', photo: 'https://i.pinimg.com/736x/50/08/ef/5008efb9df96969624d2674645027a3a.jpg', bio: 'Future King of the Pirates.') }
 
-  it 'Testing user PostCounter number negative' do
-    user = User.create(Name: 'John', Image: 'https://unsplash.com/photos/F_-0BxGuVvo', Bio: 'anything')
-    user.PostCounter = -10
-    expect(user).to_not be_valid
-  end
+  before { subject.save }
 
-  it 'Name should be present' do
-    user = User.create(Name: 'John', Image: 'https://unsplash.com/photos/F_-0BxGuVvo', Bio: 'anything')
-    user.Name = nil
-    expect(user).to_not be_valid
+  it 'User should be not be Valid' do
+    subject.name = nil
+    expect(subject).to_not be_valid
   end
-
-  it 'Has a latest_posts method' do
-    user = User.new(Name: 'Harry', PostCounter: 9)
-    expect(user).to respond_to(:latest_posts)
+  it 'User should have a name' do
+    expect(subject.name).to be_present
+  end
+  it 'User should have a photo' do
+    expect(subject.photo).to be_present
+  end
+  it 'User should have a bio' do
+    expect(subject.bio).to be_present
+  end
+  it 'Likes Counter attribute should be greater or equal to zero' do
+    subject.posts_counter = -1
+    expect(subject).to_not be_valid
+  end
+  it 'user name should not be more than 250' do
+    subject.name = Faker::Lorem.characters(number: 251)
+    expect(subject).to_not be_valid
+  end
+  it 'last_three_posts method should return the last three posts' do
+    post1 = Post.create(title: 'Post 1', text: 'This is the first post')
+    post2 = Post.create(title: 'Post 2', text: 'This is the second post')
+    post3 = Post.create(title: 'Post 3', text: 'This is the third post')
+    post4 = Post.create(title: 'Post 4', text: 'This is the fourth post')
+    subject.posts << post1 << post2 << post3 << post4
+    expect(subject.last_three_posts.size).to be(3)
+    expect(subject.last_three_posts.pluck(:id)).to match_array([post2.id, post3.id, post4.id])
   end
 end
