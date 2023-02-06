@@ -183,6 +183,15 @@ Example:
   - Twitter: [@John Mutisya](https://twitter.com/John_Web_Dev)
   - LinkedIn: [John Mutisya](https://linkedin.com/in/johnmutisya)
 
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+> Describe 1 - 3 features you will add to the project.
+
+- [ ] **[Users_Posting_feature]**
+- [ ] **[Post_Liking_Feature]**
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
