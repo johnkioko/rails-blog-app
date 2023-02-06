@@ -57,8 +57,7 @@ After you're finished please remove all the comments and instructions!
 
 > Describe your project in 1 or 2 sentences.
 
-**[Blog-App]** In this project, I added validations to the models and create specs for them.
-
+**[Blog-App]** In this project, I have created controllers and placeholder views(I am not processing any data yet) for the Blog app.
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -183,6 +182,15 @@ Example:
   - GitHub: [@John Mutisya](https://github.com/johnkioko)
   - Twitter: [@John Mutisya](https://twitter.com/John_Web_Dev)
   - LinkedIn: [John Mutisya](https://linkedin.com/in/johnmutisya)
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+> Describe 1 - 3 features you will add to the project.
+
+- [ ] **[Users_Posting_feature]**
+- [ ] **[Post_Liking_Feature]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
