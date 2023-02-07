@@ -1,35 +1,25 @@
 require 'rails_helper'
 
-RSpec.describe 'Users Endpoints', type: :request do
-  context 'HTTP Responses' do
-    before(:example) { get '/' }
-    it 'returns status 200 for root endpoint' do
-      expect(response).to have_http_status(:ok)
+RSpec.describe 'Users', type: :request do
+  describe 'GET /index' do
+    context 'when page is opened ' do
+      it 'has to return a correct response' do
+        get '/'
+        expect(response).to have_http_status(200)
+        expect(response).to render_template('index')
+        expect(response.body).to include('here are all users')
+      end
     end
+  end
 
-    it 'returns status 200 for user endpoint' do
-      get '/users/1'
-      expect(response).to have_http_status(:ok)
-    end
-  end
-  context 'Template Rendering' do
-    it 'renders the index template for root endpoint' do
-      get '/'
-      expect(response).to render_template('index')
-    end
-    it 'renders the show template for user endpoint' do
-      get '/users/1'
-      expect(response).to render_template('show')
-    end
-  end
-  context 'Response Content' do
-    it 'includes "here are all users" for root endpoint' do
-      get '/'
-      expect(response.body).to include('here are all users')
-    end
-    it 'includes "here are individual users" for user endpoint' do
-      get '/users/1'
-      expect(response.body).to include('here are individual users')
+  describe 'GET /show' do
+    context 'when page is open' do
+      it 'has to return a correct response' do
+        get '/users/:id'
+        expect(response).to have_http_status(200)
+        expect(response).to render_template(:show)
+        expect(response.body).to include('here are individual users')
+      end
     end
   end
 end
