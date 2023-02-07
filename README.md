@@ -75,8 +75,8 @@ Postgresql
 > Describe between 1-3 key features of the application.
 
 - **[Make post]**
-- **[Make comments]**
-- **[Make likes]**
+- **[Comment on post]**
+- **[like a post]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -94,79 +94,38 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-- Ruby
-- Ruby on Rails
-- Gitflow
-
-<!--
-Example command:
-
-```sh
- gem install rails
-```
- -->
+- gem install rails
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-<!--
-Example commands:
+- git clone https://github.com/johnkioko/rails-blog-app.git
 
-```sh
-  cd my-folder
-  git clone git@github.com:myaccount/my-project.git
-```
---->
 
 ### Install
 
 Install this project with:
 
-<!--
-Example command:
-
-```sh
-  cd my-project
-  gem install
-```
---->
+- bundle install
 
 ### Usage
 
 To run the project, execute the following command:
 
-<!--
-Example command:
-
-```sh
-  rails server
-```
---->
+-   rails server
 
 ### Run tests
 
 To run tests, run the following command:
 
-<!--
-Example command:
-
-```sh
-  bin/rails test test/models/article_test.rb
-```
---->
+- rspec
 
 ### Deployment
 
 You can deploy this project using:
-
-<!--
-Example:
-
-```sh
-
-```
- -->
+- github pages
+- netlify
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
