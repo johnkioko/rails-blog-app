@@ -57,7 +57,7 @@ After you're finished please remove all the comments and instructions!
 
 > Describe your project in 1 or 2 sentences.
 
-**[Blog-App]** In this project, I have created controllers and placeholder views(I am not processing any data yet) for the Blog app.
+**[Blog-App]** In this project, I have setup  controllers specs for the Blog app.
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
