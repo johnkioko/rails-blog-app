@@ -10,6 +10,10 @@ RSpec.describe 'Posts Endpoint', type: :request do
     it "renders the 'index' view" do
       expect(response).to render_template('index')
     end
+
+    it 'contains the post title in the response body' do
+      expect(response.body).to match('Hello new Post')
+    end
   end
 
   context 'GET /show' do
