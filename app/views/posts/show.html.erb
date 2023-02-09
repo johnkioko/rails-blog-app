@@ -1,1 +1,3 @@
-<p>This is the first post</p>
+<div class="post-container">
+  <%= render 'shared/post-card', post: @post, id: @post.id, brief: false, comment: true, all: true %>
+</div>

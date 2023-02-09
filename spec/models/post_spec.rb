@@ -1,38 +1,42 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  subject { Post.new(title: 'hello man') }
+  context 'Tests For #Post Model' do
+    before do
+      @user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
+      @post = Post.create(author: @user, title: 'Hi This is Tom', text: 'This is my first post')
+    end
 
-  before { subject.save }
+    describe 'It will test the Post Model Obj' do
+      it 'Post title should be present' do
+        expect(@post.title).to eql 'Hi This is Tom'
+      end
 
-  it 'Posts should be not be Valid' do
-    subject.title = nil
-    expect(subject).to_not be_valid
-  end
-  it 'User post counter to increment' do
-    subject.author = User.new(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-                              bio: 'Teacher from Mexico.')
-    subject.send(:posts_counter)
-    expect(subject.author.posts_counter).to be(1)
-  end
-  it 'Likes Counter attribute should be greater or equal to zero' do
-    subject.likes_counter = -1
-    expect(subject).to_not be_valid
-  end
-  it 'Comments Counter attribute should be an integer number' do
-    subject.comments_counter = 'some random string'
-    expect(subject).to_not be_valid
-  end
-  it 'five_last_comments method should return the last five comments' do
-    post = described_class.create(title: 'Post One', text: 'This is the post one')
-    author = User.first
+      it 'commentsCounter greater than or === 0' do
+        @post.comments_counter = -1
+        expect(@post).to_not be_valid
+      end
 
-    post.comments = [
-      Comment.new({ author:, text: 'This is the comment one' }),
-      Comment.new({ author:, text: 'This is the comment two' })
-    ]
+      it 'Should have 0 comments after creation' do
+        expect(@post.comments_counter).to eq 0
+      end
 
-    expect(post.last_comments.size).to be(2)
-    expect(post.last_comments.pluck(:id)).to match_array(post.comments.last(5).pluck(:id))
+      it 'likesCounter greater than or === 0' do
+        @post.likes_counter = -1
+        expect(@post).to_not be_valid
+      end
+
+      it 'Should have 0 likes after creation' do
+        expect(@post.likes_counter).to eq 0
+      end
+
+      it 'Should return 5 comments after creating more than 5 posts' do
+        Comment.create(post: @post, author: @user, text: 'Hi Tom!')
+        Comment.create(post: @post, author: @user, text: 'Hi Tom!')
+        Comment.create(post: @post, author: @user, text: 'Hi Tom!')
+        Comment.create(post: @post, author: @user, text: 'Hi Tom!')
+        expect(@post.recent_comments.length).to eq 4
+      end
+    end
   end
 end

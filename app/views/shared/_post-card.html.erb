@@ -1,0 +1,21 @@
+<%= stylesheet_link_tag 'user_show', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<li class="post-item card">
+  <h3 class="post-item__heading"><%= post.title %></h3>
+  <p class="post-item__detail"><%= brief ? post.text[0..120]... : post.text %></p>
+  <p class="post-item__interactions">Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+</li>
+
+<% if comment %>
+  <ul class="post-item__comments-container">
+    <% if all %>
+      <% post.all_comments.each do |comment| %>
+        <li class="post-item__comment"><%= comment.user(comment.author_id).name %>: <%= comment.text %></li>
+      <% end %>
+    <% else %>
+      <% post.recent_comments.each do |comment| %>
+        <li class="post-item__comment"><%= comment.user(comment.author_id).name %>: <%= comment.text %></li>
+      <% end %>
+    <% end %>
+  </ul>
+<% end %>

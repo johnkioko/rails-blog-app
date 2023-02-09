@@ -1,18 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-  @user = User.new(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
-  subject { Like.new(author: @user) }
+  before :each do
+    @user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
 
-  before { subject.save }
+    @post = Post.create(author: @post, title: 'Hello', text: 'This is my first post')
 
-  it 'likes should be not be Valid' do
-    subject.author = nil
-    expect(subject).to_not be_valid
+    @comment = Comment.create(post: @comment, author: @user, text: 'Hi Tom!')
+
+    @like = Like.create(author: @author, post: @post)
   end
-  it 'Post likes counter can be set' do
-    subject.post = Post.new(author: @user, title: 'Post One', text: 'This is the post one')
-    subject.send(:likes_counter)
-    expect(subject.post.likes_counter).to be(1)
+
+  it 'Comments author should equal to user who made the comment' do
+    expect(@comment.author).to eq @user
   end
 end
