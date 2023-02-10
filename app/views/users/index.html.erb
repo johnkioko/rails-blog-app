@@ -1,1 +1,14 @@
-<h1>here are all users</h1>
+<%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track': 'reload' %>
+<div class="navbar">
+<h1>Users</h1>
+<%= link_to 'Create a Post ', post_new_path(@user.id), class: 'new-post' %>
+</div>
+<div class="user-list d-flex flex-wrap">
+  <% @all_users.each do |user| %>
+    <div class="user-card m-2">
+      <%= link_to user_id_path(user.id) do %>
+        <%= render partial: 'shared/user-card', locals: { user: user } %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
