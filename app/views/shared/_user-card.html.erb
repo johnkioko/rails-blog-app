@@ -1,0 +1,6 @@
+<%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track': 'reload' %>
+<li class="user-list-item">
+  <img class="user-list-item__image" src=<%= user.photo %> alt="dummy-image">
+    <p class="user-list-item__name"><%= user.name %></p>
+    <p class="user-list-item__post-count"><%= user.posts_counter %> Posts</p>
+</li>

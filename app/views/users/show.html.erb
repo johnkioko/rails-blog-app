@@ -1,1 +1,18 @@
-<h1>here are individual users</h1>
+<%= stylesheet_link_tag 'user_show', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<div class="cardx">
+  <%= render 'shared/user-card', user: @user %>
+</div> 
+<ul class="user-details">
+<div class="bio-section card">
+    <h2 class="bio-heading">Bio</h2>
+    <p class="bio-text"><%= @user.bio %></p>
+</div>
+
+<ul class="post-list">
+  <% @user.recent_posts.each_with_index do |post, index| %>
+    <%= render 'shared/post-card', post: post, index: post.id, brief: true, comment: false, all: false %>
+  <% end %>
+</ul>
+  <%= link_to 'See All Posts', "#{@user.id}/posts", class: 'link-btn' %>
+</ul>

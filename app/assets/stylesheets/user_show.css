@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 0 20px;
+  align-items: center;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cardx {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
