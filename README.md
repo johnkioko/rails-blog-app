@@ -57,7 +57,7 @@ After you're finished please remove all the comments and instructions!
 
 > Describe your project in 1 or 2 sentences.
 
-**[Blog-App]** In this project, I have added Views associated with the Models and Controllers already created for the Blog App.
+**[Blog-App]** In this project, I have added form to the Blog App.
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
