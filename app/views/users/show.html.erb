@@ -11,8 +11,7 @@
 
 <ul class="post-list">
   <% @user.recent_posts.each_with_index do |post, index| %>
-    <%= render 'shared/post-card', post: post, index: post.id, brief: true, comment: false, all: false %>
-  <% end %>
+    <%= render 'shared/post-card', post: post, user: @user,index: post.id, brief: true, comment: false, all: false %>
 </ul>
   <%= link_to 'See All Posts', "#{@user.id}/posts", class: 'link-btn' %>
 </ul>
