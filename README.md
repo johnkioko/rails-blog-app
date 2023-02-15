@@ -142,6 +142,11 @@ You can deploy this project using:
   - Twitter: [@John Mutisya](https://twitter.com/John_Web_Dev)
   - LinkedIn: [John Mutisya](https://linkedin.com/in/johnmutisya)
 
+👤 **Degisew**
+
+- GitHub: [@degisew](https://github.com/degisew)
+- Twitter: [@Dj_etiya](https://twitter.com/DJ_etiya)
+- LinkedIn: [Degisew](https://linkedin.com/in/degisew-mengist)
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
