@@ -4,7 +4,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.3'
 
 # RSpec testing library
-gem 'rails-controller-testing'
 gem 'rspec-rails'
 gem 'rspec-support'
 
@@ -78,3 +77,6 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+gem 'database_cleaner'
+gem 'rails-controller-testing'

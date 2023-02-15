@@ -57,7 +57,7 @@ After you're finished please remove all the comments and instructions!
 
 > Describe your project in 1 or 2 sentences.
 
-**[Blog-App]** In this project, I have added form to the Blog App.
+**[Blog-App]** is a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -148,6 +148,18 @@ You can deploy this project using:
   - Twitter: [@JamesAsibeyManu](https://twitter.com/JamesAsibeyManu)
   - LinkedIn: [jamesasibeymanyu](https://linkedin.com/in/jamesasibeymanu)
   
+
+👤 **Degisew**
+
+  - GitHub: [@degisew](https://github.com/degisew)
+  - Twitter: [@Dj_etiya](https://twitter.com/DJ_etiya)
+  - LinkedIn: [Degisew](https://linkedin.com/in/degisew-mengist)
+
+👤 **JA MANU**
+    
+  - GitHub: [@jaamanu](https://github.com/jaamanu)
+  - Twitter: [@JamesAsibeyManu](https://twitter.com/JamesAsibeyManu)
+  - LinkedIn: [jamesasibeymanyu](https://linkedin.com/in/jamesasibeymanu)
 
 <!-- FUTURE FEATURES -->
 
