@@ -9,8 +9,6 @@ RSpec.describe 'Users', type: :feature do
 
       @first_post = Post.create(author: @first_user, title: 'A journey of a thousand miles ',
                                 text: 'Welcome to team. We\'re heading to the moon')
-
-
       @users = User.all
     end
     scenario 'can see the username of all other users.' do
