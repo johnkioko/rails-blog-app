@@ -144,9 +144,16 @@ You can deploy this project using:
 
 👤 **Degisew**
 
-- GitHub: [@degisew](https://github.com/degisew)
-- Twitter: [@Dj_etiya](https://twitter.com/DJ_etiya)
-- LinkedIn: [Degisew](https://linkedin.com/in/degisew-mengist)
+  - GitHub: [@degisew](https://github.com/degisew)
+  - Twitter: [@Dj_etiya](https://twitter.com/DJ_etiya)
+  - LinkedIn: [Degisew](https://linkedin.com/in/degisew-mengist)
+
+👤 **JA MANU**
+    
+  - GitHub: [@jaamanu](https://github.com/jaamanu)
+  - Twitter: [@JamesAsibeyManu](https://twitter.com/JamesAsibeyManu)
+  - LinkedIn: [jamesasibeymanyu](https://linkedin.com/in/jamesasibeymanu)
+
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
