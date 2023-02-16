@@ -8,4 +8,3 @@ class UsersController < ApplicationController
     @user = User.find(request.parameters[:id].to_i)
   end
 end
-
