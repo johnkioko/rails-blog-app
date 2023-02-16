@@ -1,0 +1,29 @@
+<%= stylesheet_link_tag 'login', media: 'all', 'data-turbolinks-track': 'reload' %>
+<div class= "centeral">
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
+<h3 class="h3 mb-3 fw-normal">Log in</h3>
+  <div class="form-floating">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control" %>
+    <label for="floatingInput">Email address</label>
+  </div>
+
+  <div class="form-floating">
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: "form-control"%>
+    <label for="floatingInput">Password</label>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field checkbox mb-3">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "Log in", class: "w-100 btn btn-lg btn-primary"%>
+  </div>
+<% end %>
+
+</div>
+
+<%= render "devise/shared/links" %>

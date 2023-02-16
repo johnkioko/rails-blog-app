@@ -2,7 +2,7 @@
   <%= render partial: 'shared/user-card', locals: { user: @user } %>
   <% @user.recent_posts.each_with_index do |post, index| %>
     <%= link_to post_id_path(@user, post), class: 'post-card-link' do %>
-      <%= render 'shared/post-card', post: post, id: post.id, brief: true, comment: true, all: false %>
+      <%= render 'shared/post-card', post: post, user: @user, id: post.id, brief: true, comment: true, all: false %>
     <% end %>
   <% end %>
 </div>
